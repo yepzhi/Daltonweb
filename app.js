@@ -56,12 +56,14 @@ function toggleMusic() {
 }
 
 function updatePlayerUI() {
+    const playSVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>';
+    const pauseSVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
     if (isPlaying) {
-        btnPlayPause.textContent = '⏸';
+        btnPlayPause.innerHTML = pauseSVG;
         musicStatus.textContent = 'Reproduciendo';
         eqBars.classList.add('playing');
     } else {
-        btnPlayPause.textContent = '▶';
+        btnPlayPause.innerHTML = playSVG;
         musicStatus.textContent = 'Pausado';
         eqBars.classList.remove('playing');
     }
