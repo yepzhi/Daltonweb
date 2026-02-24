@@ -121,7 +121,14 @@ function updateDateDisplay() {
     const m = String(d.getMinutes()).padStart(2, '0');
     const ampm = h >= 12 ? 'PM' : 'AM';
     const h12 = h % 12 || 12;
-    document.getElementById('event-time-display').textContent = `${h12}:${m} ${ampm}`;
+
+    const ed = EVENT_CONFIG.endDate;
+    const eh = ed.getHours();
+    const em = String(ed.getMinutes()).padStart(2, '0');
+    const eampm = eh >= 12 ? 'PM' : 'AM';
+    const eh12 = eh % 12 || 12;
+
+    document.getElementById('event-time-display').textContent = `${h12}:${m} - ${eh12}:${em} ${eampm}`;
 }
 
 updateDateDisplay();
@@ -154,7 +161,7 @@ function downloadICS() {
         `DTSTART:${start}`,
         `DTEND:${end}`,
         `DTSTAMP:${now}`,
-        `UID:dalton-5-birthday-${Date.now()}@daltonweb`,
+        `UID:dalton-4-birthday-${Date.now()}@daltonweb`,
         `SUMMARY:${EVENT_CONFIG.title}`,
         `DESCRIPTION:${description}`,
         `LOCATION:${EVENT_CONFIG.location}`,
