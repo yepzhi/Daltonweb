@@ -412,7 +412,7 @@ body.no-scroll {
 
 section {
     position: relative;
-    padding: 50px 20px;
+    padding: 36px 20px;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -469,7 +469,7 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 30px;
     position: relative;
 }
 
@@ -531,33 +531,28 @@ section {
 
 /* Download invitation button */
 .btn-download-invite {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 14px 28px;
-    background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
-    color: #fff;
-    border: none;
-    border-radius: var(--radius-md);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
+    width: 44px;
+    height: 44px;
+    background: rgba(168, 85, 247, 0.3);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    border-radius: 50%;
     cursor: pointer;
     text-decoration: none;
-    letter-spacing: 1px;
-    transition: all 0.4s var(--transition-smooth);
-    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
-    margin-bottom: 32px;
+    transition: all 0.3s var(--transition-smooth);
+    margin-bottom: 24px;
 }
 
 .btn-download-invite:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(168, 85, 247, 0.5);
+    background: rgba(168, 85, 247, 0.5);
+    transform: scale(1.1);
+    box-shadow: 0 4px 16px rgba(168, 85, 247, 0.4);
 }
 
 .btn-download-invite:active {
-    transform: translateY(0);
+    transform: scale(0.95);
 }
 
 .hero h1 {
@@ -578,7 +573,7 @@ section {
     font-size: clamp(1rem, 3.5vw, 1.5rem);
     color: var(--accent-gold);
     letter-spacing: 3px;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
     text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
 }
 
@@ -652,7 +647,7 @@ section {
    ═══════════════════════════════════════════════════════ */
 .section-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
 }
 
 .section-icon {
