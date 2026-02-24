@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🏎️ ¡Cumpleaños de Dalton! — 4 Años</title>
+    <meta name="description"
+        content="¡Estás invitado al cumpleaños de Dalton! 4 Años — Temática de carros. ¡A TODO MOTOR!">
+    <meta name="theme-color" content="#0a0e27">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏎️</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="no-scroll">
+
+    <!-- ════════════════════════════════════════════════
+         INTRO OVERLAY
+         ════════════════════════════════════════════════ -->
+    <div id="intro-overlay">
+        <canvas id="intro-canvas"></canvas>
+
+        <!-- Speed Lines -->
+        <div class="speed-lines" id="speed-lines"></div>
+
+        <!-- Racing Cars -->
+        <div class="intro-car intro-car-1">🏎️</div>
+        <div class="intro-car intro-car-2">🚗</div>
+        <div class="intro-car intro-car-3">🏁</div>
+
+        <!-- Text Content -->
+        <div class="intro-content">
+            <div class="intro-text-line intro-subtitle" id="intro-line-1">¡Estás Invitado!</div>
+            <div class="intro-text-line intro-name" id="intro-line-2">DALTON</div>
+            <div class="intro-text-line intro-age" id="intro-line-3">🏁 ¡4 Años! 🏁</div>
+        </div>
+
+        <!-- Transition Effect -->
+        <div class="intro-gradient-zoom" id="intro-gradient"></div>
+
+        <!-- Tap hint -->
+        <div class="intro-tap">Toca para entrar</div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════
+         BACKGROUND EFFECTS
+         ════════════════════════════════════════════════ -->
+    <div class="bg-ambience"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- ════════════════════════════════════════════════
+         MAIN CONTENT
+         ════════════════════════════════════════════════ -->
+    <main class="main-content">
+
+        <!-- ── HERO ─────────────────────────────────── -->
+        <section class="hero" id="hero">
+            <div class="hero-badge">🏎️ A TODO MOTOR</div>
+
+            <img src="invitation.jpeg" alt="Invitación de Dalton" class="hero-invitation-img reveal" id="invitation-img"
+                onclick="openLightbox(this)">
+
+            <a href="Dalton%204a.pdf" download class="btn-download-invite reveal">
+                📥 Descarga la Invitación Aquí
+            </a>
+
+            <h1 class="reveal">DALTON</h1>
+            <p class="hero-subtitle reveal">🏁 ¡Cumple 4 Años! 🏁</p>
+
+            <div class="countdown-wrapper reveal" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="cd-days">--</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="cd-hours">--</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="cd-mins">--</span>
+                    <span class="countdown-label">Min</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="cd-secs">--</span>
+                    <span class="countdown-label">Seg</span>
+                </div>
+            </div>
+
+            <div class="hero-checkered">🏁🏎️💨</div>
+        </section>
+
+        <!-- ── LOCATION ─────────────────────────────── -->
+        <section id="ubicacion">
+            <div class="section-header reveal">
+                <span class="section-icon">📍</span>
+                <h2 class="section-title">Ubicación</h2>
+                <p class="section-subtitle">¿Dónde será la fiesta?</p>
+            </div>
+
+            <div class="map-container reveal">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1800!2d-111.04131317138672!3d28.955453872680664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicación del Evento">
+                </iframe>
+            </div>
+
+            <div class="location-details">
+                <div class="glass-card location-address reveal">
+                    <div class="icon-circle">📍</div>
+                    <div class="address-text">
+                        <h3>Real del 14</h3>
+                        <p>Calle del Acueducto, Lote 136<br>Real del 14</p>
+                    </div>
+                </div>
+
+                <a href="https://www.google.com/maps?q=28.955453872680664,-111.04131317138672&z=17" target="_blank"
+                    rel="noopener" class="btn-maps reveal" id="btn-open-maps">
+                    🧭 Abrir en Google Maps
+                </a>
+            </div>
+        </section>
+
+        <!-- ── DATE & CALENDAR ──────────────────────── -->
+        <section id="fecha">
+            <div class="section-header reveal">
+                <span class="section-icon">📅</span>
+                <h2 class="section-title">Fecha & Hora</h2>
+                <p class="section-subtitle">¡No faltes!</p>
+            </div>
+
+            <div class="glass-card date-display reveal">
+                <div class="date-day-name" id="event-day-name">Sábado</div>
+                <div class="date-large" id="event-date-num">08</div>
+                <div class="date-month-year" id="event-month-year">Marzo 2026</div>
+                <div class="date-time">
+                    <span>🕓</span>
+                    <span id="event-time-display">4:00 PM</span>
+                </div>
+
+                <button class="btn-calendar" id="btn-add-calendar" onclick="downloadICS()">
+                    📲 Agregar a Mi Calendario
+                </button>
+
+                <div class="reminders-list">
+                    <div class="reminder-chip">
+                        <span class="check">✅</span> 1 Semana antes
+                    </div>
+                    <div class="reminder-chip">
+                        <span class="check">✅</span> 3 Días antes
+                    </div>
+                    <div class="reminder-chip">
+                        <span class="check">✅</span> 1 Día antes
+                    </div>
+                    <div class="reminder-chip">
+                        <span class="check">✅</span> El mismo día
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── GIFTS ────────────────────────────────── -->
+        <section id="regalos">
+            <div class="section-header reveal">
+                <span class="section-icon">🎁</span>
+                <h2 class="section-title">Ideas de Regalos</h2>
+                <p class="section-subtitle">¿Qué le gusta a Dalton?</p>
+            </div>
+
+            <div class="gifts-grid">
+                <div class="glass-card gift-card cars reveal">
+                    <span class="gift-icon">🏎️</span>
+                    <h3 class="gift-title">Carros</h3>
+                    <p class="gift-desc">¡Le encantan los carros! Hot Wheels, Monster Trucks, cualquier vehículo lo hará
+                        feliz.</p>
+                </div>
+
+                <div class="glass-card gift-card clothes reveal">
+                    <span class="gift-icon">👕</span>
+                    <h3 class="gift-title">Ropita</h3>
+                    <p class="gift-desc">Talla 4 años. ¡Le gustan los colores divertidos y los estampados de carros!</p>
+                </div>
+
+                <div class="glass-card gift-card envelope reveal">
+                    <span class="gift-icon">💌</span>
+                    <h3 class="gift-title">Sobre</h3>
+                    <p class="gift-desc">Si prefieres, un sobrecito siempre es bienvenido. ¡Cualquier detalle cuenta!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── INFO & VENUE ─────────────────────────── -->
+        <section id="info">
+            <div class="section-header reveal">
+                <span class="section-icon">🎉</span>
+                <h2 class="section-title">Info del Evento</h2>
+                <p class="section-subtitle">Todo lo que necesitas saber</p>
+            </div>
+
+            <div class="info-cards">
+                <div class="glass-card info-chip reveal">
+                    <span class="emoji">🍺</span>
+                    <div class="info-text">
+                        <h4>Bebidas</h4>
+                        <p>Se permite tomar alcohol. ¡Hay fiesta para los papás también! 🥳</p>
+                    </div>
+                </div>
+
+                <div class="glass-card info-chip reveal">
+                    <span class="emoji">🏊</span>
+                    <div class="info-text">
+                        <h4>Alberca</h4>
+                        <p>El lugar cuenta con alberca. ¡Trae tu traje de baño! 🩱</p>
+                    </div>
+                </div>
+
+                <div class="glass-card info-chip reveal">
+                    <span class="emoji">🏎️</span>
+                    <div class="info-text">
+                        <h4>Temática</h4>
+                        <p>La fiesta es temática de carros. ¡A TODO MOTOR! 🏁</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header reveal" style="margin-top:20px;">
+                <span class="section-icon">📸</span>
+                <h2 class="section-title">El Lugar</h2>
+            </div>
+
+            <div class="venue-gallery reveal">
+                <img src="venue1.jpeg" alt="Área de alberca" class="venue-img" onclick="openLightbox(this)">
+                <img src="venue2.jpeg" alt="Área de lounge" class="venue-img" onclick="openLightbox(this)">
+                <img src="venue3.jpeg" alt="Vista general" class="venue-img" onclick="openLightbox(this)">
+            </div>
+        </section>
+
+        <!-- ── FOOTER ───────────────────────────────── -->
+        <footer class="footer reveal">
+            <span class="footer-emoji">🏁</span>
+            <h2>¡Te Esperamos!</h2>
+            <p>Con cariño, la familia de Dalton 💙</p>
+        </footer>
+    </main>
+
+    <!-- ════════════════════════════════════════════════
+         LIGHTBOX
+         ════════════════════════════════════════════════ -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar">✕</button>
+        <img id="lightbox-img" src="" alt="Foto" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- ════════════════════════════════════════════════
+         MUSIC PLAYER (Floating)
+         ════════════════════════════════════════════════ -->
+    <div class="music-player" id="music-player">
+        <button class="btn-play-pause" id="btn-play-pause" onclick="toggleMusic()" aria-label="Play/Pause">
+            ▶
+        </button>
+        <div class="music-info">
+            <span class="music-title">🎵 Dalton's Song</span>
+            <span class="music-status" id="music-status">Pausado</span>
+        </div>
+        <div class="eq-bars" id="eq-bars">
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bg-audio" preload="auto" loop>
+        <source src="My%20Song%202.m4a" type="audio/mp4">
+    </audio>
+
+    <!-- Scripts -->
+    <script src="intro.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Virtual environments
+.venv/
+
+# Python
+*.pyc
+__pycache__/
+
+# Raw source files (keep clean copies only)
+WhatsApp Image*
+Dalton 4a/
+
+# Editor
+*.swp
+*.swo
